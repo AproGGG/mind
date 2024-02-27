@@ -1,4 +1,4 @@
-let blogId = `Mind-of-Science-debates-thfa`
+let blogId = `Mind-of-Science-debates-yngj`
 
 let docRef = db.collection("blogs").doc(blogId);
 
