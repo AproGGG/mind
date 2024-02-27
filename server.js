@@ -12,6 +12,11 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(initial_path, "index.html"));
 })
 
+app.get('/events', (req, res) => {
+    res.sendFile(path.join(initial_path, "events.html"));
+})
+
+
 app.get('/editor', (req, res) => {
     res.sendFile(path.join(initial_path, "editor.html"));
 })
