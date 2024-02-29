@@ -41,6 +41,8 @@ const createBlog = (blog) => {
         name="ai.html";
     } else if (blog.id=="What-are-Quantum-Computers?-rtgd"){
         name="quantum";
+    } else if (blog.id=="What-is-DNA-Methylation-toqh"){
+        name = "meth.html";
     } else {
         name = blog.id;
     }
