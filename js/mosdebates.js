@@ -13,12 +13,18 @@ docRef.get().then((doc) => {
 const setupBlog = (data) => {
     const blogTitle = document.querySelector('.title');
     const titleTag = document.querySelector('title');
-    const publish = document.querySelector('.published');
+    const publish = document.querySelector('.publishedspec');
     
     titleTag.innerHTML += blogTitle.innerHTML = data.title;
     publish.innerHTML += data.publishedAt;
 
     const article = document.querySelector('.article');
+
+    if(data.link == "None"){
+        console.log("--")
+    } else {
+        article.innerHTML += `<p style="color: red; text-align: center; height: 30px; width: 350px; outline: 2px solid red"><a style="color: red;  text-decoration: none;" href="https://linktr.ee/mindofscience">Click here to apply to the event</a></p>`}
+    
 
     if(data.subject == "Physics" || data.subject == "physics"){
         article.innerHTML += `<p style="color: red; text-align: center; height: 30px; width: 150px; outline: 2px solid red">${data.subject}</p>`
@@ -30,11 +36,7 @@ const setupBlog = (data) => {
         article.innerHTML += `<p style="color: gray; text-align: center; height: 30px; width: 150px; outline: 2px solid gray">${data.subject}</p>`
     }
 
-    if(data.link == "None"){
-        console.log("--")
-    } else {
-        article.innerHTML += `<p><a href="${data.link}" target="_blank">Click here to apply to the event</a></p>`}
-    
+
 
     addArticle(article, data.article);
 }
