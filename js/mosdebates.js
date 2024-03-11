@@ -15,12 +15,8 @@ const setupBlog = (data) => {
     const titleTag = document.querySelector('title');
     const publish = document.querySelector('.published');
     
-    
-
     titleTag.innerHTML += blogTitle.innerHTML = data.title;
     publish.innerHTML += data.publishedAt;
-
-
 
     const article = document.querySelector('.article');
 
@@ -33,6 +29,13 @@ const setupBlog = (data) => {
     } else {
         article.innerHTML += `<p style="color: gray; text-align: center; height: 30px; width: 150px; outline: 2px solid gray">${data.subject}</p>`
     }
+
+    if(data.link == "None"){
+        console.log("--")
+    } else {
+        article.innerHTML += `<p><a href="${data.link}" target="_blank">Click here to apply to the event</a></p>`}
+    
+
     addArticle(article, data.article);
 }
 
